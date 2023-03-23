@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <!--
 
     <!DOCTYPE html> declaration defines that this document is an HTML5 document
@@ -29,26 +29,43 @@
         <img src="images/logo.png">
     </div>
 
-<!--- navigation bar links --->
+    <!--- navigation bar links --->
     <div class="navbar">
-      <a href="admin_page_home.html" class="active">Home</a>
-      <a href="admin_page_add_to_database.html">Add to Database</a>
-      <a href="admin_page_remove_from_database.html">Remove from Database</a>
-      <a href="admin_page_update_current_information.html">Update Current Information</a>
-      <a href="admin_page_manage_users.html">Manage Users</a>
-      <a href="admin_page_my_list.html">My List</a>
-    
-    <!--- Displays Admin or User based on login - EDIT to display user name in My List view --->
-      <p class="right">ADMIN</p>
+        <a href="admin_page_home.html" class="active">Home</a>
+        <a href="admin_page_add_to_database.html">Add to Database</a>
+        <a href="admin_page_remove_from_database.html">Remove from Database</a>
+        <a href="admin_page_update_current_information.html">Update Current Information</a>
+        <a href="admin_page_manage_users.html">Manage Users</a>
+        <a href="admin_page_my_list.html">My List</a>
+
+        <!--- Displays Admin or User based on login - EDIT to display user name in My List view --->
+        <p class="right">ADMIN</p>
     </div>
 
-<!--- miain content window --->
-      <div class="main">
-      
-      </div>
+    <!--- miain content window --->
+    <div class="main">
+        <form>
+            <label for="movie_title">Movie title</label>
+            <input type="text" name="movie_title">
+            <label for="year">year</label>
+            <input type="text" name="year">
+            <label for="director">director</label>
+            <input type="text" name="director">
+            <label for="producer">producer</label>
+            <input type="text" name="producer">
+            <label for="lead_actor">lead actor</label>
+            <input type="text" name="lead_actor">
+            <label for="services">Services</label>
+            <input type="checkbox" name="services" value="hulu">
+            <input type="checkbox" name="services" value="amazon_prime">
+            <input type="checkbox" name="services" value="HBO_Max">
+            <input type="checkbox" name="services" value="netflix">
+        </form>
+    </div>
 
 
 
 
 </body>
+
 </html>
