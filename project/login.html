@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <!--
 
     <!DOCTYPE html> declaration defines that this document is an HTML5 document
@@ -29,18 +29,40 @@
         <img src="images/logo.png">
     </div>
 
-<!--- navigation bar links --->
+    <!--- navigation bar links --->
     <div class="navbar">
         <a href="signup.html" class="active">SIGN-UP</a>
     </div>
 
-<!--- main content window --->
-      <div class="main">
-      
-      </div>
+    <!--- main content window --->
+    <div class="login">
+        <form action="login.php" method="post">
+            <button class="log">Login</button>
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+    </div>
 
 
 
 
 </body>
+
 </html>
