@@ -15,7 +15,8 @@ create table if not exists 'movie_queue'(
     queue_ID int not null,
     movieID,
     ssID,
-    primary key(customerID,movieID,ssID)
+    primary key(customerID,movieID,ssID),
+    foreign key movieID references movies(movieID),
 );
 
 create table if not exists 'movies'(
@@ -35,28 +36,31 @@ create table if not exists 'actors'(
 );
 
 create table if not exists 'actor_movies'(
-    actor_movies int NOT null,
     movieID not null,
     actorID not null,
     Primary KEY (movieID,actorID)
+    foreign key movieID references movies(movieID),
+    foreign key actorID references actors(actorID),
 );
 
 create table if not exists 'producers'(
     producerID int auto_increment not null,
-    p_first_name varchar not null,
-    p_last_name varchar not null,
+    producer_first_name varchar not null,
+    producer_last_name varchar not null,
 );
 
 create table if not exists'directors'(
-    directorID int auto_increment not null
+    directorID int auto_increment not null,
+    director_first_name varchar not null,
+    director_last_name varchar not null,
 
 );
 create table if not exists 'streaming_service'(
     ssID int auto_increment not null,
     service_name varchar not null,
-
-
+    service_notes varchar,
 );
+
 create table if not exists 'billing'(
     billID int auto_increment not null,
     customerID int,
