@@ -18,7 +18,7 @@
     //$movie = "movies";
     //$services = "services"; //NOT SURE HOW WE'RE GOING TO DO THIS ONE
     
-    $db = mysqli_connect('localhost', 'ics325sp230105', '2944', 'ics325sp230105');
+    // $db = mysqli_connect('localhost', 'ics325sp230105', '2944', 'ics325sp230105');
 
     // $db = mysqli_connect("localhost", 'ics325sp230105', '2944', 'movie');
     // Short variables for the movie variables
@@ -28,6 +28,9 @@
     $producer = $_REQUEST['producer'];
     $lead_actor = $_REQUEST['lead_actor'];
     $movies = "movies";
+    $servername = "localhost";
+    $username = "ics325sp230105";
+    $password = "2944";
     //$services = "services"; //NOT SURE HOW WE'RE GOING TO DO THIS ONE
     
 echo $movie . $year . $director . $producer . $lead_actor . $movies;
