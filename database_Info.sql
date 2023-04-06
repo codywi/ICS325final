@@ -1,50 +1,50 @@
 create table customer(
     customerID int auto_increment not null,
-    first_name varchar(40) not null, 
-    last_name varchar(40) not null,
-    email varchar(50) not null,
-    street_address varchar(20),
-    city varchar(30),
-    state varchar(2),
-    userName varchar(20),
-    password varchar(10),
+    first_name char(40) not null, 
+    last_name char(40) not null,
+    email char(50) not null,
+    street_address char(20),
+    city char(30),
+    state char(2),
+    userName char(20),
+    password char(10),
     primary key(customerID)
 );
 
 create table movies(
     movieID int auto_increment not null,
-    movie_title varchar(40) not null,
+    movie_title char(40) not null,
     movie_year bigint not null,
-    movie_director varchar(40) not null,
-    movie_producer varchar(40) not null,
-    movie_actor varchar(40) not null,
+    movie_director char(40) not null,
+    movie_producer char(40) not null,
+    movie_actor char(40) not null,
     primary key(movieID)
 );
 
 create table actors(
     actorID int auto_increment not null,
-    actor_first_name varchar(40) not null,
-    actor_last_name varchar(40) not null,
+    actor_first_name char(40) not null,
+    actor_last_name char(40) not null,
     primary key(actorID)
 );
 
 create table producers(
     producerID int auto_increment not null,
-    producer_first_name varchar(40) not null,
-    producer_last_name varchar(40) not null,
+    producer_first_name char(40) not null,
+    producer_last_name char(40) not null,
     primary key(producerID)
 );
 
 create table directors(
     directorID int auto_increment not null,
-    director_first_name varchar(40) not null,
-    director_last_name varchar(40) not null,
+    director_first_name char(40) not null,
+    director_last_name char(40) not null,
     primary key(directorID)
 );
 create table streaming_service(
     ssID int auto_increment not null,
-    service_name varchar(40) not null,
-    service_notes varchar(40),
+    service_name char(40) not null,
+    service_notes char(40),
     primary key(ssID)
 );
 create table movie_queue(

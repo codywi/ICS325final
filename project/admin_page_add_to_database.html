@@ -45,26 +45,35 @@
     <!--- main content window --->
     <div class="main">
         <form action="add_to_database.php" method="post">
+            
             <label for="movie_title">Movie title</label> <br />
-            <input required type="text" name="movie_title"> <br />
+            <input required type="text" name="movie_title" id="movie_title"> <br />
+            
             <label for="year">Year</label> <br />
-            <input required type="text" name="year"> <br />
+            <input required type="text" name="year"  id="year"> <br />
+            
             <label for="director">Director</label> <br />
-            <input required type="text" name="director"> <br />
+            <input required type="text" name="director" id="director"> <br />
+            
             <label for="producer">Producer</label> <br />
-            <input required type="text" name="producer"> <br />
+            <input required type="text" name="producer" id="producer"> <br />
+            
             <label for="actor">Lead actor</label> <br />
-            <input required type="text" name="actor"> <br />
+            <input required type="text" name="lead_actor" id="lead_actor"> <br />
 
             <h4>services</h4> <br />
             <label for="hulu">Hulu</label>
-            <input type="checkbox" name="services" value="hulu"> <br />
+            <input type="checkbox" name="services" value="hulu" id="hulu"> <br />
+            
             <label for="amazon_prime">Amazon Prime</label>
-            <input type="checkbox" name="services" value="amazon_prime"> <br />
+            <input type="checkbox" name="services" value="amazon_prime" id="amazon_prime"> <br />
+            
             <label for="HBO_Max">HBO max</label>
-            <input type="checkbox" name="services" value="HBO_Max"> <br />
+            <input type="checkbox" name="services" value="hbo_max" id="hbo_max"> <br />
+            
             <label for="netflix">Netflix</label>
-            <input type="checkbox" name="services" value="netflix"> <br />
+            <input type="checkbox" name="services" value="netflix"  id="netflix> <br />
+            
             <input type="submit" value="add movie">
         </form>
     </div>
