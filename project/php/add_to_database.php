@@ -9,6 +9,7 @@
     <h1>Movie Entry Results</h1>
 
     <?php
+    print_r($_POST);
     //$movie_title = "movie_title";
     //$year = "year";
     //$director = "director";
@@ -19,7 +20,7 @@
     
     $db = mysqli_connect("localhost", 'ics325sp230105', '2944', 'ics325sp230105');
 
-    $db = mysqli_connect("localhost", 'ics325sp230105', '2944', 'movie');
+    // $db = mysqli_connect("localhost", 'ics325sp230105', '2944', 'movie');
     // Short variables for the movie variables
     $movie_title = $_REQUEST['movie_title'];
     $year = $_REQUEST['year'];
