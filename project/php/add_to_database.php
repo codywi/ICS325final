@@ -39,17 +39,8 @@ echo "test";
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    echo "Connected successfully";
-    // Create the table if not exists
-/*$createTableIfNotExists = 'CREATE TABLE [IF NOT EXISTS] movies(  
-    -- movieID INT NOT NULL auto_increment Primary key,
-    -- movie_title varchar (40) NOT NULL,  
-    -- year int NOT NULL,
-    -- director varchar (40) NOT NULL,
-    -- producer varchar(40) NOT NULL,
-    -- lead_actor varchar(40) NOT NULL
-    -- services
-      )';*/
+    else{echo "Connected successfully";}
+    
     function addMovie($conn, $movie_title, $year, $director, $producer, $lead_actor)
     {
         $sql = 'INSERT INTO movies (movie_title,year,director,producer,lead_actor) 
