@@ -9,16 +9,23 @@
     <h1>Movie Entry Results</h1>
 
     <?php
-
+    //$movie_title = "movie_title";
+    //$year = "year";
+    //$director = "director";
+    //$producer = "producer";
+    //$lead_actor = "lead_actor";
+    //$movie = "movies";
+    //$services = "services"; //NOT SURE HOW WE'RE GOING TO DO THIS ONE
+    
     $db = mysqli_connect("localhost", 'ics325sp230105', '2944', 'ics325sp230105');
     // Short variables for the movie variables
-    $movie_title = "movie_title";
-    $year = "year";
-    $director = "director";
-    $producer = "producer";
-    $lead_actor = "lead_actor";
-    $movie = "movies";
-    $services = "services"; //NOT SURE HOW WE'RE GOING TO DO THIS ONE
+    $movie_title = $_REQUEST['movie_title'];
+    $year = $_REQUEST['year'];
+    $director = $_REQUEST['director'];
+    $producer = $_REQUEST['producer'];
+    $lead_actor = $_REQUEST['lead_actor'];
+    $movies = "movies";
+    //$services = "services"; //NOT SURE HOW WE'RE GOING TO DO THIS ONE
     
     // Create connection
     $conn = new mysqli($servername, $username, $password,'movies');
@@ -56,8 +63,9 @@
               Please try again later.</p>";
         exit;
      }
-     mysqli_select_db($db, $movie);
-     $query = "INSERT INTO movie VALUES (?, ?, ?, ?, ?, ?)";
+     mysqli_select_db($db, $movies);
+     //$query = "INSERT INTO movie VALUES (?, ?, ?, ?, ?, ?)";
+     $query = "INSERT INTO movie VALUES ('$movie_title', '$year', '$director', '$producer', '$lead_actor)";
      $stmt = $db->prepare($query);
      $stmt->bind_param($movie_title, $year, $director, $producer, $lead_actor,$services);
      $stmt->execute();
