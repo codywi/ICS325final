@@ -30,7 +30,8 @@
     $movies = "movies";
     //$services = "services"; //NOT SURE HOW WE'RE GOING TO DO THIS ONE
     
-echo $movie . $year . $director . $producer . $lead_actor . $movies;~
+echo $movie . $year . $director . $producer . $lead_actor . $movies;
+echo "test";
     // Create connection
     $conn = new mysqli($servername, $username, $password,'movies');
 
