@@ -27,10 +27,10 @@
     $director = $_REQUEST['director'];
     $producer = $_REQUEST['producer'];
     $lead_actor = $_REQUEST['lead_actor'];
-    $movies = "movies";
-    $servername = "localhost";
-    $username = "ics325sp230105";
-    $password = "2944";
+    $movies = 'movies';
+    $servername = 'localhost';
+    $username = 'ics325sp230105';
+    $password = '2944';
     //$services = "services"; //NOT SURE HOW WE'RE GOING TO DO THIS ONE
     
 echo $movie . $year . $director . $producer . $lead_actor . $movies;
@@ -39,15 +39,12 @@ echo "test";
     $conn = new mysqli($servername, $username, $password,'movies');
 
     // Check connection
-   if (mysqli_connect_errno()) {
-        echo "<p>Error: Could not connect to database.<br/>
-              Please try again later.</p>";
-        exit;
-     }
-     else{
-         echo "connection Sucessful!";
-     }
-     mysqli_select_db($db, $movie);  
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+      }
+      echo "Connected successfully";
+      ?>
+     mysqli_select_db($conn, 'movie');  
 
     function addMovie($conn, $movie_title, $year, $director, $producer, $lead_actor)
     {
