@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <h1>Movie Entry Results</h1>
+    <h1>Movie Entry Testing</h1>
 
     <?php
     print_r($_POST);
