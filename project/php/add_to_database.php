@@ -43,7 +43,7 @@ echo "test";
         die("Connection failed: " . $conn->connect_error);
       }
       echo "Connected successfully";
-      ?>
+      
      mysqli_select_db($conn, 'movie');  
 
     function addMovie($conn, $movie_title, $year, $director, $producer, $lead_actor)
