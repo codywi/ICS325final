@@ -10,7 +10,7 @@
 
     <?php
 
-    $db = mysqli_connect("localhost", 'ics325sp230105', '2944', 'ics325sp230105');
+    $db = mysqli_connect("localhost", 'ics325sp230105', '2944', 'movie');
     // Short variables for the movie variables
     $movie_title = "movie_title";
     $year = "year";
@@ -38,18 +38,18 @@
     -- lead_actor varchar(40) NOT NULL
     -- services
       )';*/
-    // function addMovie($conn, $movie_title, $year, $director, $producer, $lead_actor)
-    // {
-    //     $sql = 'INSERT INTO movies (movie_title,year,director,producer,lead_actor) 
-    // VALUES(' . $movie_title . ',' . $year . ',' . $director . ',' . $producer . ',' . $lead_actor . ')';
-    //     if (mysqli_query($conn, $sql)) {
-    //         echo "record inserted sucessfully";
-    //     } else {
-    //         echo "Could not insert record: " . mysqli_error($conn);
+    function addMovie($conn, $movie_title, $year, $director, $producer, $lead_actor)
+    {
+        $sql = 'INSERT INTO movies (movie_title,year,director,producer,lead_actor) 
+    VALUES(' . $movie_title . ',' . $year . ',' . $director . ',' . $producer . ',' . $lead_actor . ')';
+        if (mysqli_query($conn, $sql)) {
+            echo "record inserted sucessfully";
+        } else {
+            echo "Could not insert record: " . mysqli_error($conn);
 
-    //     }
-    //     mysqli_close($conn);
-    // }
+        }
+        mysqli_close($conn);
+    }
 
     if (mysqli_connect_errno()) {
         echo "<p>Error: Could not connect to database.<br/>
@@ -57,17 +57,17 @@
         exit;
      }
      mysqli_select_db($db, $movie);
-     $query = "INSERT INTO movie VALUES (?, ?, ?, ?, ?, ?)";
-     $stmt = $db->prepare($query);
-     $stmt->bind_param($movie_title, $year, $director, $producer, $lead_actor,$services);
-     $stmt->execute();
+    //  $query = "INSERT INTO movie (VALUES (?, ?, ?, ?, ?, ?)";
+    //  $stmt = $db->prepare($query);
+    //  $stmt->bind_param($movie_title, $year, $director, $producer, $lead_actor,$services);
+    //  $stmt->execute();
  
-     if ($stmt->affected_rows > 0) {
-         echo  "<p>Book inserted into the database.</p>";
-     } else {
-         echo "<p>An error has occurred.<br/>
-               The item was not added.</p>";
-     }
+    //  if ($stmt->affected_rows > 0) {
+    //      echo  "<p>Book inserted into the database.</p>";
+    //  } else {
+    //      echo "<p>An error has occurred.<br/>
+    //            The item was not added.</p>";
+    //  }
  $db->close();
     ?>
 </body>
