@@ -18,7 +18,7 @@
     //$movie = "movies";
     //$services = "services"; //NOT SURE HOW WE'RE GOING TO DO THIS ONE
     
-    $db = mysqli_connect("localhost", 'ics325sp230105', '2944', 'ics325sp230105');
+    $db = mysqli_connect('localhost', 'ics325sp230105', '2944', 'ics325sp230105');
 
     // $db = mysqli_connect("localhost", 'ics325sp230105', '2944', 'movie');
     // Short variables for the movie variables
