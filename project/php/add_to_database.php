@@ -36,11 +36,16 @@ echo "test";
     $conn = new mysqli($servername, $username, $password,'movies');
 
     // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    else{echo "Connected successfully";}
-    
+   if (mysqli_connect_errno()) {
+        echo "<p>Error: Could not connect to database.<br/>
+              Please try again later.</p>";
+        exit;
+     }
+     else{
+         echo "connection Sucessful!";
+     }
+     mysqli_select_db($db, $movie);  
+
     function addMovie($conn, $movie_title, $year, $director, $producer, $lead_actor)
     {
         $sql = 'INSERT INTO movies (movie_title,year,director,producer,lead_actor) 
@@ -54,12 +59,7 @@ echo "test";
         mysqli_close($conn);
     }
 
-    if (mysqli_connect_errno()) {
-        echo "<p>Error: Could not connect to database.<br/>
-              Please try again later.</p>";
-        exit;
-     }
-     mysqli_select_db($db, $movie);
+   
     //  $query = "INSERT INTO movie (VALUES (?, ?, ?, ?, ?, ?)";
     //  $stmt = $db->prepare($query);
     //  $stmt->bind_param($movie_title, $year, $director, $producer, $lead_actor,$services);
