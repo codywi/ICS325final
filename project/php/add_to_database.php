@@ -1,28 +1,35 @@
-<?php
-// variables to connect to the DB
-// $servername = "";
-// $username = "ics325sp230105";
-// $password = "2944";
+<!DOCTYPE html>
+<html>
 
-$db = mysqli_connect("localhost",'ics325sp230105','2944','ics325sp230105');
-// Short variables for the movie variables
-$movie_title = "movie_title";
-$year = "year";
-$director = "director";
-$producer = "producer";
-$lead_actor = "lead_actor";
-// $services = "services"; NOT SURE HOW WE'RE GOING TO DO THIS ONE
+<head>
+    <title> Movie Entry</title>
+</head>
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);
+<body>
+    <h1>Movie Entry Results</h1>
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-// Create the table if not exists
-$createTableIfNotExists = 'CREATE TABLE [IF NOT EXISTS] movies(  
+    <?php
+
+    $db = mysqli_connect("localhost", 'ics325sp230105', '2944', 'ics325sp230105');
+    // Short variables for the movie variables
+    $movie_title = "movie_title";
+    $year = "year";
+    $director = "director";
+    $producer = "producer";
+    $lead_actor = "lead_actor";
+    $movie = "movies";
+    $services = "services"; //NOT SURE HOW WE'RE GOING TO DO THIS ONE
+    
+    // Create connection
+    $conn = new mysqli($servername, $username, $password);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    echo "Connected successfully";
+    // Create the table if not exists
+/*$createTableIfNotExists = 'CREATE TABLE [IF NOT EXISTS] movies(  
     -- movieID INT NOT NULL auto_increment Primary key,
     -- movie_title varchar (40) NOT NULL,  
     -- year int NOT NULL,
@@ -30,18 +37,39 @@ $createTableIfNotExists = 'CREATE TABLE [IF NOT EXISTS] movies(
     -- producer varchar(40) NOT NULL,
     -- lead_actor varchar(40) NOT NULL
     -- services
-      )';
-function addMovie($conn,$movie_title, $year, $director, $producer, $lead_actor)
-{
-    $sql = 'INSERT INTO movies (movie_title,year,director,producer,lead_actor) 
-    VALUES(' . $movie_title . ',' . $year . ',' . $director . ',' . $producer . ',' . $lead_actor . ')';
-    if (mysqli_query($conn,$sql)) {
-        echo"record inserted sucessfully";
-    } else {
-     echo"Could not insert record: " .mysqli_error($conn);
+      )';*/
+    // function addMovie($conn, $movie_title, $year, $director, $producer, $lead_actor)
+    // {
+    //     $sql = 'INSERT INTO movies (movie_title,year,director,producer,lead_actor) 
+    // VALUES(' . $movie_title . ',' . $year . ',' . $director . ',' . $producer . ',' . $lead_actor . ')';
+    //     if (mysqli_query($conn, $sql)) {
+    //         echo "record inserted sucessfully";
+    //     } else {
+    //         echo "Could not insert record: " . mysqli_error($conn);
 
-    }
-    mysqli_close($conn);
-}
+    //     }
+    //     mysqli_close($conn);
+    // }
 
-?>
+    if (mysqli_connect_errno()) {
+        echo "<p>Error: Could not connect to database.<br/>
+              Please try again later.</p>";
+        exit;
+     }
+     mysqli_select_db($db, $movie);
+     $query = "INSERT INTO movie VALUES (?, ?, ?, ?, ?, ?)";
+     $stmt = $db->prepare($query);
+     $stmt->bind_param($movie_title, $year, $director, $producer, $lead_actor,$services);
+     $stmt->execute();
+ 
+     if ($stmt->affected_rows > 0) {
+         echo  "<p>Book inserted into the database.</p>";
+     } else {
+         echo "<p>An error has occurred.<br/>
+               The item was not added.</p>";
+     }
+ $db->close();
+    ?>
+</body>
+
+</html>
