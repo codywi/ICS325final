@@ -21,7 +21,7 @@
     $services = "services"; //NOT SURE HOW WE'RE GOING TO DO THIS ONE
     
     // Create connection
-    $conn = new mysqli($servername, $username, $password);
+    $conn = new mysqli($servername, $username, $password,'movies');
 
     // Check connection
     if ($conn->connect_error) {
