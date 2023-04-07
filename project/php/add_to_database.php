@@ -18,20 +18,19 @@
     //$movie = "movies";
     //$services = "services"; //NOT SURE HOW WE'RE GOING TO DO THIS ONE
     
-    // $db = mysqli_connect('localhost', 'ics325sp230105', '2944', 'ics325sp230105');
-    // $db = mysqli_connect("localhost", 'ics325sp230105', '2944', 'movie');
+    $conn = mysqli_connect('localhost', 'ics325sp230105', '2944', 'ics325sp230105');
     
     // Short variables for the movie variables
-    $movie_title = $_REQUEST['movie_title'];
-    $year = $_REQUEST['year'];
-    $director = $_REQUEST['director'];
-    $producer = $_REQUEST['producer'];
-    $lead_actor = $_REQUEST['lead_actor'];
-    $movies = 'movies';
+    // $movie_title = $_REQUEST['movie_title'];
+    // $year = $_REQUEST['year'];
+    // $director = $_REQUEST['director'];
+    // $producer = $_REQUEST['producer'];
+    // $lead_actor = $_REQUEST['lead_actor'];
+    // $movies = 'movies';
     //$services = "services"; //NOT SURE HOW WE'RE GOING TO DO THIS ONE
     
-echo $movie_title . $year . $director . $producer . $lead_actor . $movies;
-echo "test";
+// echo $movie_title . $year . $director . $producer . $lead_actor . $movies;
+// echo "test";
 
 //create connection - including db_connection.php, this establishes the connection to the server
 
@@ -39,15 +38,15 @@ echo "test";
 //$conn = OpenCon();
 //    echo "Connected Successfully";
 
-include 'db_conection.php';
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $db = "movies";
+// include 'db_conection.php';
+    // $servername = "localhost";
+    // $username = "root";
+    // $password = "";
+    // $db = "movies";
 
 // Create connection
 
-    $conn = new mysqli($servername, $username, $password,$db);
+    // $conn = new mysqli($servername, $username, $password,$db);
 
 // Check connection
     if (!$conn) {
@@ -56,22 +55,22 @@ include 'db_conection.php';
 
     echo  nl2br("\nConnected successfully");
 
-    $sql = "INSERT INTO movies (movies, year, director, producer, lead_actor)
-            VALUES ($movie_title, $year, $director, $producer, $lead_actor)";
+//     $sql = "INSERT INTO movies (movies, year, director, producer, lead_actor)
+//             VALUES ($movie_title, $year, $director, $producer, $lead_actor)";
 
-    if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-
+//     if ($conn->query($sql) === TRUE) {
+//     echo "New record created successfully";
+// } else {
+//     echo "Error: " . $sql . "<br>" . $conn->error;
+// }
 
 
 
 
 
-/*
+
+
+ /*
  
   Create connection
   $conn = new mysqli($servername, $username, $password,'movies');
