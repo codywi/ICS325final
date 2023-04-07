@@ -19,8 +19,8 @@
     //$services = "services"; //NOT SURE HOW WE'RE GOING TO DO THIS ONE
     
     // $db = mysqli_connect('localhost', 'ics325sp230105', '2944', 'ics325sp230105');
-
     // $db = mysqli_connect("localhost", 'ics325sp230105', '2944', 'movie');
+    
     // Short variables for the movie variables
     $movie_title = $_REQUEST['movie_title'];
     $year = $_REQUEST['year'];
@@ -28,17 +28,56 @@
     $producer = $_REQUEST['producer'];
     $lead_actor = $_REQUEST['lead_actor'];
     $movies = 'movies';
-    $servername = 'localhost';
-    $username = 'ics325sp230105';
-    $password = '2944';
     //$services = "services"; //NOT SURE HOW WE'RE GOING TO DO THIS ONE
     
-echo $movie . $year . $director . $producer . $lead_actor . $movies;
+echo $movie_title . $year . $director . $producer . $lead_actor . $movies;
 echo "test";
-    // Create connection
-    $conn = new mysqli($servername, $username, $password,'movies');
 
-    // Check connection
+//create connection - including db_connection.php, this establishes the connection to the server
+
+//include 'db_connection.php'; 
+//$conn = OpenCon();
+//    echo "Connected Successfully";
+
+include 'db_conection.php';
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $db = "movies";
+
+// Create connection
+
+    $conn = new mysqli($servername, $username, $password,$db);
+
+// Check connection
+    if (!$conn) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    echo  nl2br("\nConnected successfully");
+
+    $sql = "INSERT INTO movies (movies, year, director, producer, lead_actor)
+            VALUES ($movie_title, $year, $director, $producer, $lead_actor)";
+
+    if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+
+
+
+
+
+
+/*
+ 
+  Create connection
+  $conn = new mysqli($servername, $username, $password,'movies');
+
+     Check connection
+
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
       }
@@ -71,7 +110,10 @@ echo "test";
     //      echo "<p>An error has occurred.<br/>
     //            The item was not added.</p>";
     //  }
- $db->close();
+ $db->close(); */
+
+    CloseCon($conn);
+
     ?>
 </body>
 
