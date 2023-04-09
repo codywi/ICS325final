@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <h1>Movie Entry Testing</h1>
+    <h1>Movie Entry</h1>
     <?php
     $title = (string)$_POST['title'];
     $year = (int)$_POST['year'];
