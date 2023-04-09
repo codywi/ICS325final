@@ -1,5 +1,5 @@
 
-INSERT INTO `movies` (movie_title,movie_year,movie_director,movie_producer,movie_actor) VALUES
+INSERT INTO `movies` (title,year,director,producer,actor) VALUES
 ('The Shawshank Redemption ','1999','Michael CARTER','Veronica Harmon','Lori Sandoval'),
 ('The Godfather','2000','Christopher MITCHELL','Isaac Edwards','Karen Sims'),
 ('The Godfather: Part II','2002','Jessica PEREZ','Amy Young','Thomas Bell'),

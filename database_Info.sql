@@ -13,11 +13,11 @@ create table customer(
 
 create table movies(
     movieID int auto_increment not null,
-    movie_title char(40) not null,
-    movie_year bigint not null,
-    movie_director char(40) not null,
-    movie_producer char(40) not null,
-    movie_actor char(40) not null,
+    title char(40) not null,
+    year bigint not null,
+    director char(40) not null,
+    producer char(40) not null,
+    actor char(40) not null,
     primary key(movieID)
 );
 
