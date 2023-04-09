@@ -15,10 +15,10 @@ body {
 
 /* Header/logo Title */
 .header {
-  padding: 80px;
+  padding: 23px;
   background: #1abc9c;
   color: white;
-  max-height: 500px;
+  max-height: 200px;
 }
 
 
