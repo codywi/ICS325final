@@ -72,7 +72,7 @@
         while ($row = mysqli_fetch_row($result)) {
 
           echo "<tr>";
-          echo"<td></td>";
+          echo "<td></td>";
           echo "<td>" . $row[0] . "</td>";
           echo "<td>" . $row[1] . "</td>";
           echo "<td>" . $row[2] . "</td>";

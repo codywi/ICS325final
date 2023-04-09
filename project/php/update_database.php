@@ -31,8 +31,8 @@
   $stmt->execute();
   if ($stmt->error) {
     echo "FAILURE!!! " . $stmt->error;
-  }
-  else echo "Updated {$stmt->affected_rows} rows";
+  } else
+    echo "Updated {$stmt->affected_rows} rows";
 
 
   $stmt->close();

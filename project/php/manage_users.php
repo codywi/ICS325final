@@ -21,14 +21,14 @@ $createTableIfNotExists = 'CREATE TABLE [IF NOT EXISTS] users(
     userName varchar(40) NOT NULL,
 
       )';
-function addUser($conn,$userID,$username)
+function addUser($conn, $userID, $username)
 {
     $sql = 'INSERT INTO users (userName) 
-    VALUES(' . $username.')';
-    if (mysqli_query($conn,$sql)) {
-        echo"record inserted sucessfully";
+    VALUES(' . $username . ')';
+    if (mysqli_query($conn, $sql)) {
+        echo "record inserted sucessfully";
     } else {
-     echo"Could not insert record: " .mysqli_error($conn);
+        echo "Could not insert record: " . mysqli_error($conn);
 
     }
     mysqli_close($conn);

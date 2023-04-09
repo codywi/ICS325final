@@ -10,7 +10,7 @@
     <p> element defines a paragraph
     <meta> tags always go inside the <head> element, and are typically used to specify character set, page description, keywords, author of the document, and viewport settings.
 
---->
+    --->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,9 @@
 <body>
 
     <div class="header">
-        <img src="images/logo.png">
+        <a href="admin_page_home.html">
+            <img src="images/logo.png">
+        </a>
     </div>
 
     <!--- navigation bar links --->
@@ -44,20 +46,20 @@
 
     <!--- main content window --->
     <div class="main">
-        <form action="php/add_to_database.php" method="post">         
-            
+        <form action="php/add_to_database.php" method="post">
+
             <label for="title">Movie title</label> <br />
             <input required type="text" name="title" id="title"> <br />
-            
+
             <label for="year">Year</label> <br />
-            <input required type="number" name="year"  id="year"> <br />
-            
+            <input required type="number" name="year" id="year"> <br />
+
             <label for="director">Director</label> <br />
             <input required type="text" name="director" id="director"> <br />
-            
+
             <label for="producer">Producer</label> <br />
             <input required type="text" name="producer" id="producer"> <br />
-            
+
             <label for="actor">Lead actor</label> <br />
             <input required type="text" name="actor" id="actor"> <br />
 
@@ -73,7 +75,7 @@
             
             <label for="netflix">Netflix</label>
             <input type="checkbox" name="services" value="netflix"  id="netflix"> <br />
-             -->
+                -->
             <input type="submit" value="add movie">
         </form>
     </div>

@@ -10,7 +10,7 @@ use LDAP\Result;
  */
 populateRecommendationTable();
 
- function populateRecommendationTable()
+function populateRecommendationTable()
 {
     $conn = mysqli_connect('localhost', 'ics325sp230105', '2944', 'ics325sp230105');
 
