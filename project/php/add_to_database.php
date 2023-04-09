@@ -14,6 +14,7 @@
     $producer = (string)$_POST['producer'];
     $lead_actor = (string)$_POST['lead_actor'];
     // $services = $_POST["services"];
+    var_dump($title);
 echo $title . $year . $director . $producer . $lead_actor;
 
     // create connection 
@@ -28,7 +29,7 @@ echo $title . $year . $director . $producer . $lead_actor;
 
     $stmt = $conn->prepare("INSERT INTO movies (title, year, director, producer, actor) VALUES (?, ?, ?,?,?)");
 
-    $stmt->bind_param("sisss",$title, $year, $director, $producer, $lead_actor);
+    $stmt->bind_param("sisss",$title, $year, $director, $producer, $actor);
 
 
 $stmt->execute();
