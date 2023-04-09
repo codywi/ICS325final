@@ -35,7 +35,7 @@ populateRecommendationTable();
 
 // if ($result = $mysqli->query($query)) {
 //     while ($row = $result->fetch_assoc()) {
-//         $movie_title = $row["title"];
+//         $title = $row["title"];
 //         $year = $row["year"];
 //         $director = $row["director"];
 //         $producer = $row["producer"];
