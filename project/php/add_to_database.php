@@ -7,16 +7,14 @@
 
 <body>
     <h1>Movie Entry Testing</h1>
-
     <?php
-
-    $movie_title = (string)$_POST['movie_title'];
+    $title = (string)$_POST['title'];
     $year = (int)$_POST['year'];
     $director = (string)$_POST['director'];
     $producer = (string)$_POST['producer'];
     $lead_actor = (string)$_POST['lead_actor'];
     // $services = $_POST["services"];
-echo $movie_title . $year . $director . $producer . $lead_actor;
+echo $title . $year . $director . $producer . $lead_actor;
 
     // create connection 
     $conn = mysqli_connect('localhost', 'ics325sp230105', '2944', 'ics325sp230105');
@@ -28,9 +26,9 @@ echo $movie_title . $year . $director . $producer . $lead_actor;
 
     echo  nl2br("\nConnected successfully");
 
-    $stmt = $conn->prepare("INSERT INTO movies (movie_title, movie_year, movie_director, movie_producer, movie_actor) VALUES (?, ?, ?,?,?)");
+    $stmt = $conn->prepare("INSERT INTO movies (title, year, director, producer, actor) VALUES (?, ?, ?,?,?)");
 
-    $stmt->bind_param("sisss",$movie_title, $year, $director, $producer, $lead_actor);
+    $stmt->bind_param("sisss",$title, $year, $director, $producer, $lead_actor);
 
 
 $stmt->execute();

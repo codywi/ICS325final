@@ -18,9 +18,9 @@ if (!$conn) {
 
   echo  nl2br("\nConnected successfully");
 
-    $stmt = $conn->prepare("UPDATE movies (movie_title, movie_year, movie_director, movie_producer, movie_actor) VALUES (?, ?, ?,?,?) WHERE ");
+    $stmt = $conn->prepare("UPDATE movies (title, year, director, producer, actor) VALUES (?, ?, ?,?,?) WHERE ");
 
-    $stmt->bind_param("sisss",$movie_title, $year, $director, $producer, $lead_actor);
+    $stmt->bind_param("sisss",$title, $year, $director, $producer, $actor);
   
     $stmt->execute();
 
