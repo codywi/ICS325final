@@ -22,7 +22,6 @@
   <link rel="stylesheet" href="stylesheets/page_outline_stylesheet.css">
   <link rel="stylesheet" href="stylesheets/user_table.css">
 
-
 </head>
 
 <body>
@@ -48,6 +47,7 @@
     <table>
 
       <tr>
+        <th>Add to queue?</th>
         <th>Movie Title</th>
         <th>Movie year</th>
         <th>Lead Director</th>
@@ -59,29 +59,27 @@
         <?php
         use LDAP\Result;
 
-          $conn = mysqli_connect('localhost', 'ics325sp230105', '2944', 'ics325sp230105');
-      
-          if (!$conn) {
-              die("Connection failed: " . $conn->connect_error);
-          } else {
-              echo "sucessful connection";
-          }
-      
-          echo "<b> <center>Database Output</center> </b> <br> <br>";
-          $query = 'select title, year, director, producer, actor FROM movies;';
-      
-          $result = mysqli_query($conn, $query);
-      
-          while ($row = mysqli_fetch_row($result)) {
+        $conn = mysqli_connect('localhost', 'ics325sp230105', '2944', 'ics325sp230105');
 
-            echo "<tr>";
-            echo"<td>".$row[0]."</td>";
-            echo"<td>".$row[1]."</td>";
-            echo"<td>".$row[2]."</td>";
-            echo"<td>".$row[3]."</td>";
-            echo"<td>".$row[4]."</td>";
-            echo "</td> </tr>";
-          }
+        if (!$conn) {
+          die("Connection failed: " . $conn->connect_error);
+        }
+
+        $query = 'select title, year, director, producer, actor FROM movies;';
+
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_row($result)) {
+
+          echo "<tr>";
+          echo"<td></td>";
+          echo "<td>" . $row[0] . "</td>";
+          echo "<td>" . $row[1] . "</td>";
+          echo "<td>" . $row[2] . "</td>";
+          echo "<td>" . $row[3] . "</td>";
+          echo "<td>" . $row[4] . "</td>";
+          echo "</td> </tr>";
+        }
         ?>
 
       </tr>
