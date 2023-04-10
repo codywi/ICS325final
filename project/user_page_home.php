@@ -16,19 +16,18 @@
 <html lang="en">
 
 <head>
-  <title>Quevie Web map</title>
+  <title>Quevie Home</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="stylesheets/page_outline_stylesheet.css">
+  <link rel="stylesheet" href="stylesheets/user_table.css">
 
 </head>
 
 <body>
 
   <div class="header">
-    <a href="user_page_home.php">
-      <img src="images/logo.png">
-    </a>
+    <img src="images/logo.png">
   </div>
 
   <!--- navigation bar links --->
@@ -41,14 +40,53 @@
     <!--- Displays currently logged in person EDIT to show user name based on login --->
     <p class="right">USER</p>
   </div>
-
   <!--- main content window --->
   <div class="main">
 
+    <h2>Suggested Movies</h2>
+    <table>
+
+      <tr>
+        <th>Add to queue?</th>
+        <th>Movie Title</th>
+        <th>Movie year</th>
+        <th>Lead Director</th>
+        <th>Lead Producer</th>
+        <th>Main Actor</th>
+      </tr>
+
+      <tr>
+        <?php
+        use LDAP\Result;
+
+        $conn = mysqli_connect('localhost', 'ics325sp230105', '2944', 'ics325sp230105');
+
+        if (!$conn) {
+          die("Connection failed: " . $conn->connect_error);
+        }
+
+        $query = 'select title, year, director, producer, actor FROM movies;';
+
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_row($result)) {
+
+          echo "<tr>";
+          echo "<td></td>";
+          echo "<td>" . $row[0] . "</td>";
+          echo "<td>" . $row[1] . "</td>";
+          echo "<td>" . $row[2] . "</td>";
+          echo "<td>" . $row[3] . "</td>";
+          echo "<td>" . $row[4] . "</td>";
+          echo "</td> </tr>";
+        }
+        ?>
+
+      </tr>
+
+    </table>
+
   </div>
-
-
-
 
 </body>
 
