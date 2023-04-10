@@ -34,10 +34,10 @@
     <!--- navigation bar links --->
     <div class="navbar">
         <a href="admin_page_home.html">Home</a>
-        <a href="admin_page_add_to_database.html" class="active">Add to Database</a>
+        <a href="admin_page_add_to_database.html" >Add to Database</a>
         <a href="admin_page_remove_from_database.html">Remove from Database</a>
         <a href="admin_page_update_movie.html">Update Current Information</a>
-        <a href="admin_page_manage_users.php">Manage Users</a>
+        <a href="admin_page_manage_users.php" class="active">Manage Users</a>
         <a href="admin_page_my_list.html">My List</a>
 
         <!--- Displays Admin or User based on login - EDIT to display user name in My List view --->
