@@ -33,31 +33,61 @@
 
     <!--- navigation bar links --->
     <div class="navbar">
-        <a href="admin_page_home.html" class="active">Home</a>
-        <a href="admin_page_add_to_database.html">Add to Database</a>
+        <a href="admin_page_home.html">Home</a>
+        <a href="admin_page_add_to_database.html" class="active">Add to Database</a>
         <a href="admin_page_remove_from_database.html">Remove from Database</a>
         <a href="admin_page_update_movie.html">Update Current Information</a>
-        <a href="admin_page_manage_users.html">Manage Users</a>
+        <a href="admin_page_manage_users.php">Manage Users</a>
         <a href="admin_page_my_list.html">My List</a>
 
         <!--- Displays Admin or User based on login - EDIT to display user name in My List view --->
         <p class="right">ADMIN</p>
     </div>
+  <!--- main content window --->
+  <div class="main">
 
-    <!--- main content window --->
-    <!-- This will be implimented when we get to the actual backend portion of the website and will work with the DB to manage users  -->
-    <div class="main">
-        <h4>Please select user to manage</h4>
-        <ul>
-            <li> Fake data!</li>
-            <li> Fake data!</li>
-            <li> Fake data!</li>
-            <li> Fake data!</li>
-        </ul>
-    </div>
+    <h2>Manage Users</h2>
+    <table>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>email</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+      </tr>
 
+      <tr>
+        <?php
+        use LDAP\Result;
 
+        $conn = mysqli_connect('localhost', 'ics325sp230105', '2944', 'ics325sp230105');
 
+        if (!$conn) {
+          die("Connection failed: " . $conn->connect_error);
+        }
+
+        $query = 'select first_name,last_name, email, street_address, city, state FROM customer';
+
+        $result = mysqli_query($conn, $query);
+
+        while ($row = mysqli_fetch_row($result)) {
+
+          echo "<td>" . $row[0] . "</td>";
+          echo "<td>" . $row[1] . "</td>";
+          echo "<td>" . $row[2] . "</td>";
+          echo "<td>" . $row[3] . "</td>";
+          echo "<td>" . $row[4] . "</td>";
+          echo "<td>" . $row[5] . "</td>";
+          echo "</td> </tr>";
+        }
+        ?>
+
+      </tr>
+
+    </table>
+
+  </div>
 
 </body>
 
