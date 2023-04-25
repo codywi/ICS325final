@@ -33,36 +33,36 @@
 
     <!--- navigation bar links --->
     <div class="navbar">
-        <a href="login.html" class="active">LOGIN</a>
+        <a href="login.php" class="active">LOGIN</a>
     </div>
 
-    <!--- main content window --->
+    <!-- - main content window - -->
     <div class="main">
         <div class="main">
+            <div>
             <form action="sign_up.php">
-                <div class="container">
-                    <button class="reg">Sign up</button>
-                    <p>Please fill in this form to create an account.</p>
-                    <hr>
+                <div>
+                    <h1>Please fill in this form to create an account.</h1>
+                    <br />
 
                     <label for="email"><b>Email</b></label>
-                    <input type="text" placeholder="Enter Email" name="email" required>
+                    <input type="email" placeholder="Enter Email" name="email" required>
+                    <br />
 
                     <label for="psw"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="psw" required>
+                    <br />
 
                     <label for="psw-repeat"><b>Repeat Password</b></label>
                     <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                    <br />
 
-                    <div>
-                        <button type="button" class="cancelbtn">Cancel</button>
-                        <button type="submit" class="reg">Sign Up</button>
-                    </div>
+                    <button type="button" class="cancelbtn">Cancel</button>
+                    <button type="submit" class="reg">Sign Up</button>
                 </div>
-            </form>
         </div>
-
-
+        </form>
+    </div>
 
 
 </body>
