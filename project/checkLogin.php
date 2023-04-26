@@ -20,13 +20,13 @@ userName='" . $userid . "' and
 password='" . $password . "'";
 $result = $conn->query($query);
 
-// above works! Keep going through for syntax errors
+
 if ($result->num_rows) {
 // if they are in the database register the user id
 $_SESSION['valid_user'] = $userid;
 }
 $conn->close();
-}
+
 if (isset($_SESSION['valid_user'])) {
 echo '<p>You are logged in as: ' . $_SESSION['valid_user'] . ' <br />';
 echo '<a href="logout.php">Log out</a></p>';
