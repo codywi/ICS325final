@@ -20,7 +20,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="stylesheets/page_outline_stylesheet.css">
-
+  <?php session_start(); ?>
 </head>
 
 <body>
@@ -31,7 +31,7 @@
 
   <!--- navigation bar links --->
   <div class="navbar">
-    <a href="signup.html" class="active">SIGN-UP</a>
+    <!-- <a href="signup.html" class="active">SIGN-UP</a> -->
   </div>
 
   <!--- main content window --->
@@ -39,14 +39,14 @@
     <form action="checkLogin.php" method="post">
       <fieldset>
         <legend>Login Now!</legend>
-        <p><label for="userid">UserID:</label> 
+        <p><label for="userid">UserID:</label>
           <input type="text" name="userid" id="userid" size="30" />
         </p>
         <p><label for="password">Password:</label>
           <input type="password" name="password" id="password" size="30" />
         </p>
       </fieldset>
-      <button type="submit" name="login">Login</button>
+      <button class="loginButton" type="submit" name="login">Login</button>
     </form>
   </div>
 

@@ -12,11 +12,16 @@
 
 --->
 
+<?php
+
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>admin page outline</title>
+  <title>Website Map</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="stylesheets/page_outline_stylesheet.css">
@@ -26,27 +31,26 @@
 <body>
 
   <div class="header">
-    <a href="admin_page_home.html">
+    <a href="user_page_home.php">
       <img src="images/logo.png">
     </a>
   </div>
 
   <!--- navigation bar links --->
   <div class="navbar">
-    <a href="admin_page_home.html" class="active">Home</a>
-    <a href="admin_page_add_to_database.html">Add to Database</a>
-    <a href="admin_page_remove_from_database.html">Remove from Database</a>
-    <a href="admin_page_update_movie.html">Update Current Information</a>
-    <a href="admin_page_manage_users.php">Manage Users</a>
-    <a href="admin_page_my_list.html">My List</a>
-
-    <!--- Displays Admin or User based on login - EDIT to display user name in My List view --->
-    <p class="right">ADMIN</p>
+    <a href="#" class="active">Home</a>
+    <!-- <a href="#"></a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a> -->
+    <!--- Displays Admin or User based on login - EDIT --->
+    <p class="right">Admin/User</p>
   </div>
 
   <!--- main content window --->
   <div class="main">
-
+    <a class="button" href="admin_page_home.php">Admin Home </a> <br />
+    <a class="button" href="user_page_home.php">User Home </a>
   </div>
 
 

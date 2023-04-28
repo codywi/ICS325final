@@ -16,11 +16,11 @@
 <html lang="en">
 
 <head>
-    <title>Sign up</title>
+    <title>Unauthorized</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylesheets/page_outline_stylesheet.css">
-
+    <?php session_start(); ?>
 </head>
 
 <body>
@@ -33,36 +33,16 @@
 
     <!--- navigation bar links --->
     <div class="navbar">
-        <a href="login.php" class="active">LOGIN</a>
+        <a href="user_page_home.php" class="active">Go to Home</a>
     </div>
 
     <!-- - main content window - -->
     <div class="main">
         <div class="main">
             <div>
-                <form action="sign_up.php">
-                    <div>
-                        <h1>Please fill in this form to create an account.</h1>
-                        <br />
-
-                        <label for="email"><b>Email</b></label>
-                        <input type="email" placeholder="Enter Email" name="email" required>
-                        <br />
-
-                        <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="psw" required>
-                        <br />
-
-                        <label for="psw-repeat"><b>Repeat Password</b></label>
-                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-                        <br />
-
-                        <button type="button" class="cancelbtn">Cancel</button>
-                        <button type="submit" class="reg">Sign Up</button>
-                    </div>
+                <p> You are not an admin! Please use the link above to exit this page
+                <p>
             </div>
-            </form>
-        </div>
 
 
 </body>

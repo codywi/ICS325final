@@ -16,7 +16,7 @@
 <html lang="en">
 
 <head>
-  <title>admin home</title>
+  <title>Admin Remove movie</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="stylesheets/page_outline_stylesheet.css">
@@ -24,21 +24,28 @@
 </head>
 
 <body>
+  <?php
+  session_start();
+  if (!($_SESSION['isAdmin'])) {
+    include('notAnAdmin.php');
+    die();
+  }
+  ?>
 
   <div class="header">
-    <a href="admin_page_home.html">
+    <a href="admin_page_home.php">
       <img src="images/logo.png">
     </a>
   </div>
 
   <!--- navigation bar links --->
   <div class="navbar">
-    <a href="admin_page_home.html" class="active">Home</a>
-    <a href="admin_page_add_to_database.html">Add to Database</a>
-    <a href="admin_page_remove_from_database.html">Remove from Database</a>
+    <a href="admin_page_home.php" class="active">Home</a>
+    <a href="admin_page_add_to_database.php">Add to Database</a>
+    <a href="admin_page_remove_from_database.php">Remove from Database</a>
     <a href="admin_page_update_movie.html">Update Current Information</a>
     <a href="admin_page_manage_users.php">Manage Users</a>
-    <a href="admin_page_my_list.html">My List</a>
+    <a href="admin_page_my_list.php">My List</a>
 
     <!--- Displays Admin or User based on login - EDIT to display user name in My List view --->
     <p class="right">ADMIN</p>
@@ -46,7 +53,6 @@
 
   <!--- main content window --->
   <div class="main">
-    <h1> Welcome to the admin home, please use any of the buttons above to perform administrative tasks</h1>
 
   </div>
 

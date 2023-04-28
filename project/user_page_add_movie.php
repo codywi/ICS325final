@@ -27,16 +27,14 @@
 <body>
 
   <div class="header">
-    <a href="user_page_home.php">
-      <img src="images/logo.png">
-    </a>
+    <img src="images/logo.png">
   </div>
 
   <!--- navigation bar links --->
   <div class="navbar">
     <a href="user_page_home.php">Home</a>
     <!-- <a href="user_page_select_services.html">Select Services</a> -->
-    <a href="user_page_search_movie.php" class="active">Search for a Movie</a>
+    <a href="user_page_add_movie.php" class="active">Search for a Movie</a>
     <a href="user_page_remove_movie.php">Remove Movie</a>
 
     <!--- Displays currently logged in person EDIT to show user name based on login --->
@@ -51,57 +49,61 @@
   <div class="main">
     <div class="main">
 
-      <h2>Search for a movie</h2>
-      <form action="php/search_db.php" method="post">
-        <label for="search box">What is the title?</label>
-        <input required type="text" name="search" id="title">
-        <br />
-      </form>
-      <input type="submit" value="Search">
-      <!-- 
+      <h2>Add Movies</h2>
+
       <table>
 
         <tr>
-          <th>Add to queue?</th>
-          <th>Movie Title</th>
-          <th>Movie year</th>
-          <th>Lead Director</th>
-          <th>Lead Producer</th>
-          <th>Main Actor</th>
+          <th>header - Movie Title</th>
+          <th>header - Lead Director</th>
+          <th>header - Lead Producer</th>
+          <th>header - Available Services</th>
         </tr>
 
         <tr>
-          <?php
-          session_start();
-          use LDAP\Result;
+          <td>Movie Title</td>
+          <td>Lead Director</td>
+          <td>Lead Producer</td>
+          <td>Available Services</td>
 
-          $conn = mysqli_connect('localhost', 'ics325sp230105', '2944', 'ics325sp230105');
-
-          if (!$conn) {
-            die("Connection failed: " . $conn->connect_error);
-          }
-
-          $query = 'select title, year, director, producer, actor FROM movies;';
-
-          $result = mysqli_query($conn, $query);
-
-          while ($row = mysqli_fetch_row($result)) {
-
-            echo "<tr>";
-            echo "<td></td>";
-            echo "<td>" . $row[0] . "</td>";
-            echo "<td>" . $row[1] . "</td>";
-            echo "<td>" . $row[2] . "</td>";
-            echo "<td>" . $row[3] . "</td>";
-            echo "<td>" . $row[4] . "</td>";
-            echo "</td> </tr>";
-          }
-          ?>
-      
         </tr>
-      
-      </table> -->
 
+        <tr>
+          <td>Movie Title</td>
+          <td>Lead Director</td>
+          <td>Lead Producer</td>
+          <td>Available Services</td>
+        </tr>
+
+        <tr>
+          <td>Movie Title</td>
+          <td>Lead Director</td>
+          <td>Lead Producer</td>
+          <td>Available Services</td>
+        </tr>
+
+        <tr>
+          <td>Movie Title</td>
+          <td>Lead Director</td>
+          <td>Lead Producer</td>
+          <td>Available Services</td>
+        </tr>
+
+        <tr>
+          <td>Movie Title</td>
+          <td>Lead Director</td>
+          <td>Lead Producer</td>
+          <td>Available Services</td>
+        </tr>
+
+        <tr>
+          <td>Movie Title</td>
+          <td>Lead Director</td>
+          <td>Lead Producer</td>
+          <td>Available Services</td>
+        </tr>
+
+      </table>
 
     </div>
   </div>

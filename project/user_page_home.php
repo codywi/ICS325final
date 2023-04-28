@@ -21,11 +21,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="stylesheets/page_outline_stylesheet.css">
   <link rel="stylesheet" href="stylesheets/user_table.css">
-
 </head>
 
 <body>
-
+<?php 
+session_start();
+include 'isAdminCheckFN.php';
+?>
   <div class="header">
     <img src="images/logo.png">
   </div>
@@ -33,12 +35,21 @@
   <!--- navigation bar links --->
   <div class="navbar">
     <a href="user_page_home.php" class="active">Home</a>
-    <a href="user_page_select_services.html">Select Services</a>
+    <!-- <a href="user_page_select_services.html">Select Services</a> -->
     <a href="user_page_search_movie.php">Search for a Movie</a>
     <a href="user_page_remove_movie.html">Remove Movie</a>
+    <?php
+      if (isAdminCheck()){
+        echo '<a href="admin_page_home.php">Admin </a>';
+      }
+    ?>
 
     <!--- Displays currently logged in person EDIT to show user name based on login --->
     <p class="right">USER</p>
+    <?php
+    echo '<a  href="logout.php">Log out</a>';
+
+    ?>
   </div>
   <!--- main content window --->
   <div class="main">

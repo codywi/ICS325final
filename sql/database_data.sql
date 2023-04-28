@@ -53,7 +53,8 @@ CREATE TABLE `customer` (
   `city` VARCHAR(1024),
   `state` VARCHAR(1024),
   `userName` VARCHAR(1024),
-  `password` VARCHAR(1024)
+  `password` VARCHAR(1024),
+  `isAdmin` int(1) default 0
 );
 
 INSERT INTO `customer` (first_name,last_name,email,street_address,city,state,userName,password) VALUES
@@ -62,4 +63,5 @@ INSERT INTO `customer` (first_name,last_name,email,street_address,city,state,use
 ('Gael','JOHNSON','gjohnson@gmail.com','901 fake street','les Escaldes','MN','name3','passw2rd'),
 ('Jon','WILLIAMS','jwilliams@gmail.com','2148 fake street','Andorra la Vella','MN','name4','passw0rd'),
 ('Wilson','JONES','wjones@gmail.com','23932 fake street','Umm al Qaywayn','MN','name5','passw1rd'),
-('Justin','BROWN','jbrown@gmail.com','0549 real street','Ras al-Khaimah','NJ','name6','passw2rd');
+('Justin','BROWN','jbrown@gmail.com','0549 real street','Ras al-Khaimah','NJ','name6','passw2rd'),
+('Cody','Wilkens','poop@gmail.com','123 Ottawa Ave N','GOlden Valley','MN','admin','admin',1);
