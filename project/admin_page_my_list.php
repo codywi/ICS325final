@@ -50,6 +50,10 @@
 
     <!--- Displays Admin or User based on login - EDIT to display user name in My List view --->
     <p class="right">User view</p>
+    <?php
+    echo '<a  href="logout.php">Log out</a>';
+
+    ?>
   </div>
 
   <!--- main content window --->

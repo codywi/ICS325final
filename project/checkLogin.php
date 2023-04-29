@@ -63,7 +63,7 @@
     // This SETS the session indicator that the user is admin! Use this on admin pages
     $_SESSION['isAdmin'] = $row["isAdmin"];
   }
-
+  
   if (isset($_SESSION['valid_user'])) {
     echo '<p>Welcome! ' . $_SESSION['valid_user'] . ' <br />';
     echo '<a href="logout.php"><button>Logout</button></a></p>';

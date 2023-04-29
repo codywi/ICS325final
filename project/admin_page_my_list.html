@@ -10,13 +10,14 @@
     <p> element defines a paragraph
     <meta> tags always go inside the <head> element, and are typically used to specify character set, page description, keywords, author of the document, and viewport settings.
 
+        This is the admin's profile, this is "view as user"
 --->
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>Manage Users</title>
+  <title>admin My List</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="stylesheets/page_outline_stylesheet.css">
@@ -24,14 +25,6 @@
 </head>
 
 <body>
-  <?php
-  session_start();
-  if (!($_SESSION['isAdmin'])) {
-    include('notAnAdmin.php');
-    die();
-  }
-
-  ?>
 
   <div class="header">
     <a href="admin_page_home.php">
@@ -41,65 +34,24 @@
 
   <!--- navigation bar links --->
   <div class="navbar">
-    <a href="admin_page_home.php">Home</a>
+    <a href="admin_page_home.php" class="active">Home</a>
     <a href="admin_page_add_to_database.php">Add to Database</a>
-    <a href="admin_page_remove_from_database.php">Remove from Database</a>
+    <a href="admin_page_remove_from_database.html">Remove from Database</a>
     <a href="admin_page_update_movie.html">Update Current Information</a>
-    <a href="admin_page_manage_users.php" class="active">Manage Users</a>
-    <a href="admin_page_my_list.php">My List</a>
+    <a href="admin_page_manage_users.php">Manage Users</a>
+    <a href="admin_page_my_list.html">My List</a>
 
     <!--- Displays Admin or User based on login - EDIT to display user name in My List view --->
-    <p class="right">ADMIN</p>
-    <?php
-    echo '<a  href="logout.php">Log out</a>';
-
-    ?>
+    <p class="right">View as user</p>
   </div>
+
   <!--- main content window --->
   <div class="main">
 
-    <h2>Manage Users</h2>
-    <table>
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>email</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>State</th>
-      </tr>
-
-      <tr>
-        <?php
-        use LDAP\Result;
-
-        $conn = mysqli_connect('localhost', 'ics325sp230105', '2944', 'ics325sp230105');
-
-        if (!$conn) {
-          die("Connection failed: " . $conn->connect_error);
-        }
-
-        $query = 'select first_name,last_name, email, street_address, city, state FROM customer';
-
-        $result = mysqli_query($conn, $query);
-
-        while ($row = mysqli_fetch_row($result)) {
-
-          echo "<td>" . $row[0] . "</td>";
-          echo "<td>" . $row[1] . "</td>";
-          echo "<td>" . $row[2] . "</td>";
-          echo "<td>" . $row[3] . "</td>";
-          echo "<td>" . $row[4] . "</td>";
-          echo "<td>" . $row[5] . "</td>";
-          echo "</td> </tr>";
-        }
-        ?>
-
-      </tr>
-
-    </table>
-
   </div>
+
+
+
 
 </body>
 

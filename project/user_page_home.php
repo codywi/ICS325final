@@ -56,7 +56,9 @@ include 'isAdminCheckFN.php';
 
     <h2>Suggested Movies</h2>
     <table>
-
+      function addToQueue(name: String) {
+        // add to queue using name
+      }
       <tr>
         <th>Add to queue?</th>
         <th>Movie Title</th>
@@ -77,21 +79,34 @@ include 'isAdminCheckFN.php';
         }
 
         $query = 'select title, year, director, producer, actor FROM movies;';
-
         $result = mysqli_query($conn, $query);
+        $row = $result->fetch_assoc();
 
         while ($row = mysqli_fetch_row($result)) {
 
           echo "<tr>";
-          echo "<td></td>";
+
+          echo "<td>";
+
+          echo "<form action='addToQueue.php' method='POST'>";
+          // echo $row[0];
+          echo "<input type='hidden' name='movieID' value='".$row[0]."'>";
+          echo "<button onClick=addToQueue($row[0])>ADD TO QUEUE</button>";
+          echo "</form>";
+
+          echo"</td>";
+
+
           echo "<td>" . $row[0] . "</td>";
           echo "<td>" . $row[1] . "</td>";
           echo "<td>" . $row[2] . "</td>";
           echo "<td>" . $row[3] . "</td>";
           echo "<td>" . $row[4] . "</td>";
-          echo "</td> </tr>";
+
+          echo "</tr>";
         }
         ?>
+
 
       </tr>
 
